@@ -424,8 +424,7 @@ class Lexicon(lazydict):
         return self._path
 
     def load(self):
-        # Arnold NNP x
-        dict.update(self, (x.split(" ")[:2] for x in _read(self._path)))
+        dict.update(self, (x.split(" ")[:2] for x in _read(self._path) if " " in x))
 
 
 #--- FREQUENCY -----------------------------------------------------------
