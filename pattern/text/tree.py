@@ -1804,7 +1804,7 @@ def nltk_tree(sentence):
     The NLTK module should be on the search path somewhere.
 
     """
-    from nltk import tree
+    from nltk.tree import Tree
 
     def do_pnp(pnp):
         # Returns the PNPChunk (and the contained Chunk objects) in NLTK
@@ -1831,7 +1831,8 @@ def nltk_tree(sentence):
             T.append(do_pnp(ch.pnp))
             v.append(ch.pnp)
     T.append(')')
-    return tree.bracket_parse(' '.join(T))
+    return Tree.fromstring(' '.join(T))
+    
 
 ### GRAPHVIZ DOT #########################################################
 
